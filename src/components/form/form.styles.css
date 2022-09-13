@@ -1,0 +1,23 @@
+.form-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
+#input-text {
+  max-height: 57px;
+  width: 404px;
+  padding: 16px;
+  gap: 10px;
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 20px;
+}
+#input-text:focus {
+  outline: none !important;
+  border-color: #595959;
+  box-shadow: 0 0 10px #595959;
+}

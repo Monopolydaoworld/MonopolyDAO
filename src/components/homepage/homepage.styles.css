@@ -1,0 +1,137 @@
+.first-section {
+  padding: 0 1rem;
+  margin-top: 5rem;
+}
+
+.section-header h1 {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  text-align: center;
+  color: #ffffff;
+  width: auto;
+  width: 40.921rem;
+  margin: auto auto;
+  transition: 0.3s;
+}
+
+.section-header p {
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 31px;
+  text-align: center;
+  color: #ffffff;
+  transition: 0.3s;
+  /* padding: 1rem 0; */
+}
+
+.form-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  transition: 0.3s;
+  text-align: center;
+}
+
+#input-text {
+  max-height: 57px;
+  width: 404px;
+  padding: 16px;
+  gap: 10px;
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 2rem;
+}
+#input-text:focus {
+  outline: none !important;
+  border-color: #595959;
+  box-shadow: 0 0 10px #595959;
+}
+
+#success-message {
+  background-color: #fff;
+  color: #175366;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  border-radius: 12px;
+  padding: 16px;
+  width: auto;
+  width: 404px;
+  margin: auto auto;
+  margin-top: 4rem;
+  display: none;
+}
+
+#fail-message {
+  color: #fd5f5f;
+  height: 25px;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 400;
+  width: auto;
+  width: 798px;
+  font-size: 20px;
+  margin: auto auto;
+  margin-top: 1rem;
+  display: none;
+}
+
+@media screen and (max-width: 754px) {
+  #input-text {
+    width: 90vw;
+    margin-top: 0;
+  }
+  .section-header h1 {
+    font-size: 50px;
+  }
+  #fail-message {
+    width: fit-content;
+  }
+  #success-message {
+    width: fit-content;
+  }
+  .first-section {
+  margin-top: 4rem;
+}
+}
+
+@media screen and (max-width: 680px) {
+  .section-header h1 {
+    width: fit-content;
+  }
+}
+@media screen and (max-width: 573px) {
+  .section-header h1 {
+    width: fit-content;
+  }
+  #input-text {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 441px) {
+  .section-header h1 {
+    font-size: 2.4rem;
+  }
+  .section-header p {
+    font-size: 20px;
+    line-height: 18.6px;
+  }
+}
+@media screen and (max-width: 320px) {
+  body {
+    height: 100vh;
+  }
+  .first-section {
+    margin-top: 0;
+  }
+  .form-input {
+    margin-top: 1rem;
+  }
+  
+}

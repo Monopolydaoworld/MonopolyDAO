@@ -1,0 +1,484 @@
+/* NavBar styling */
+
+/* First Page */
+.firstpage {
+  background: linear-gradient(180deg, #121212 0%, rgba(18, 18, 18, 0.5) 91.01%),
+    url("/src/assets/placeholder.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 100%;
+  transition: 0.3s;
+  padding-bottom: 10rem;
+}
+.navbar {
+  padding: 2rem 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  text-align: center;
+  align-items: center;
+}
+.logo_img {
+  width: 3rem;
+  max-height: 7rem;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 18px;
+  font-weight: 500;
+}
+.hamburger {
+  cursor: pointer;
+  display: none;
+}
+.bar {
+  display: block;
+  width: 58px;
+  height: 1px;
+  margin: 0.4rem 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+}
+
+.bar1 {
+  width: auto;
+  margin-left: 1rem;
+}
+
+.bar3 {
+  opacity: 0;
+}
+a {
+  color: #fff;
+}
+
+/* Second Page */
+
+.secondpage {
+  padding: 2rem 6rem;
+}
+
+.secondpage-header h1 {
+  font-size: 94px;
+  font-weight: 500;
+  max-width: 700px;
+  width: auto;
+  line-height: 115px;
+  color: #1e1e1e;
+}
+.secondpage.active {
+  display: none;
+}
+
+.secondpage-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.secondpage-p {
+  max-width: 30%;
+  width: auto;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 400;
+  color: #1e1e1e;
+  line-height: 170%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.secondpage-img {
+  position: relative;
+  max-width: 641px;
+  width: 50%;
+  height: auto;
+  max-height: 434px;
+  object-position: center;
+  transition: all 0.3s ease;
+  bottom: 2rem;
+  margin: 1rem 2rem;
+}
+
+.secondpage-a {
+  color: #175366;
+}
+
+/* Third Page */
+
+.thirdpage-content {
+  display: flex;
+  padding: 2rem 6rem;
+  justify-content: space-between;
+}
+#thirdpage-header {
+  padding: 1rem 6rem;
+  color: #175366;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.thirdpage-img {
+  position: relative;
+  max-width: 641px;
+  width: 50%;
+  height: auto;
+  max-height: 434px;
+  object-position: center;
+  transition: all 0.3s ease;
+  bottom: 2rem;
+}
+.thirdpage-content-2 {
+  position: relative;
+  max-width: 641px;
+  width: 100%;
+  height: auto;
+  max-height: 434px;
+  object-position: center;
+  transition: all 0.3s ease;
+  bottom: 2rem;
+  margin: 1rem 2rem;
+  text-align: left;
+}
+
+.thirdpage-content-2 > h1 {
+  margin-top: 0;
+  font-weight: 500;
+  margin-bottom: 0;
+  width: auto;
+  max-width: 605px;
+  font-size: 5vw;
+}
+.thirdpage-content-2 > p {
+  font-size: 15px;
+  line-height: 170%;
+  font-weight: 400;
+  max-width: 70vw;
+}
+.thirdpage.active {
+  display: none;
+}
+#thidpage-header-hidden {
+  display: none;
+}
+
+/* Fourth Page */
+
+.fourthpage.active {
+  display: none;
+}
+.fourthpage {
+  padding: 2rem 6rem;
+  text-align: left;
+}
+#fourthpage-header-h1 {
+  width: auto;
+  font-size: 4vw;
+  font-weight: 500;
+}
+
+#fourthpage-header {
+  color: #175366;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.forthpage-content-p1 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  color: #1e1e1e;
+}
+.fourthpage-content-p2 {
+  font-size: 20px;
+  font-weight: 400;
+  max-width: 387px;
+  width: auto;
+}
+
+.fourthpage-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 5rem;
+  margin-bottom: 2rem;
+}
+
+#borders {
+  border-left: solid 1px #1e1e1e;
+  padding-left: 2rem;
+}
+/* Fifth page */
+
+.fifthpage.active {
+  display: none;
+}
+.fifthpage {
+  padding: 2rem 6rem;
+  text-align: left;
+  background-color: #f3f5ff;
+}
+#fifthpage-header-h1 {
+  width: auto;
+  font-size: 5vw;
+  font-weight: 500;
+}
+.fifthpage-content-p2 {
+  font-size: 20px;
+  font-weight: 400;
+  max-width: 793px;
+  width: auto;
+  line-height: 170%;
+}
+
+/* Sixth Page */
+
+.sixthpage.active {
+  display: none;
+}
+.sixthpage {
+  padding: 2rem 6rem;
+  margin-right: 1rem;
+}
+.sixthpage-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 5rem;
+  margin-bottom: 2rem;
+}
+.sixthpage-content-p1 {
+  font-size: 2vw;
+  font-weight: 700;
+}
+.sixthpage-content-p2 {
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 780px) {
+  .navbar {
+    padding: 1rem 3rem;
+  }
+  .firstpage {
+    padding-top: 2rem;
+    background-size: 900px 100vh;
+    padding-bottom: 5rem;
+  }
+  .secondpage {
+    padding: 2rem 2rem;
+  }
+  .secondpage-header h1 {
+    font-size: 60px;
+    max-width: 700px;
+    width: auto;
+    line-height: 95px;
+    color: #1e1e1e;
+  }
+  #thirdpage-header {
+    padding: 1rem 2rem;
+  }
+
+  .thirdpage-content {
+    display: flex;
+    padding: 2rem 2rem;
+    justify-content: space-between;
+  }
+  .thirdpage-content-2 > p {
+    line-height: 130%;
+  }
+  /* fourth page */
+  .fourthpage-content {
+    gap: 2rem;
+  }
+  .fourthpage {
+    padding: 2rem 2rem;
+    text-align: left;
+  }
+  /* Fifth Page */
+  .fifthpage {
+    padding: 2rem 2rem;
+  }
+  /* Sixth Page */
+  .sixthpage {
+    padding: 2rem 2rem;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  /* First Page */
+  .firstpage.active {
+    background: #fff;
+  }
+  .navbar {
+    padding: 0.2rem 3rem;
+  }
+  .nav-links {
+    position: fixed;
+    left: -100%;
+    top: 10rem;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    height: 100vh;
+    /* background: #F5F5F5; */
+  }
+  a {
+    color: #1e1e1e;
+  }
+  .nav-links a {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  .nav-link {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+  }
+  .nav-links.active {
+    left: 0;
+    text-align: left;
+    padding-left: 3rem;
+  }
+  .nav-links.active #nav-link {
+    font-weight: 500;
+    font-size: 18px;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+    background-color: #1e1e1e;
+    margin-left: 2rem;
+    width: 1.5rem;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+    background-color: #1e1e1e;
+    width: 1.5rem;
+    margin-left: 2rem;
+    opacity: 100;
+  }
+  /* Second Page */
+
+  .secondpage-content {
+    flex-direction: column;
+  }
+
+  .secondpage-header h1 {
+    font-size: 35px;
+    line-height: 43px;
+  }
+
+  .secondpage-p {
+    max-width: 100%;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  .secondpage-a {
+    font-size: 16px;
+  }
+  .secondpage-img {
+    width: 100%;
+    height: auto;
+    max-height: 434px;
+    object-position: center;
+    transition: all 0.3s ease;
+    bottom: 2rem;
+    margin: 2rem 0;
+  }
+
+  /* Third Page */
+
+  .thirdpage-content {
+    flex-direction: column-reverse;
+  }
+  #thidpage-header-hidden {
+    display: block;
+    margin-left: 2rem;
+    font-size: 35px;
+    font-weight: 500;
+    margin-top: 0;
+  }
+  #thirdpage-header {
+    padding: 0 2rem;
+    font-size: 15px;
+  }
+
+  .thirdpage-content-2 > h1 {
+    display: none;
+  }
+  .thirdpage-img {
+    width: 100%;
+  }
+  .thirdpage-content-2 > p {
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .thirdpage-content-2 {
+    margin: 1rem 0;
+  }
+
+  /* Fourthh Page */
+
+  .fourthpage-content {
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+  }
+  #borders {
+    border-left: none;
+    padding-left: 0;
+  }
+  .forthpage-content-p1 {
+    margin-bottom: 1rem;
+  }
+  #fourthpage-header-h1 {
+    font-size: 9vw;
+  }
+  .forthpage-content-p1 {
+    margin-bottom: 2rem;
+  }
+  .fourthpage-content-p2 {
+    width: 100%;
+  }
+  /* Fifth Page */
+  #fifthpage-header-h1 {
+    font-size: 9vw;
+  }
+  /* Sixth Page */
+  .sixthpage-content {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  .sixthpage-content-p1 {
+    font-size: 4vw;
+  }
+  .sixthpage-content-p2 {
+    font-size: 3vw;
+  }
+}
+@media only screen and (max-height: 700px) {
+  .firstpage {
+    background-size: 900px 100vh;
+  }
+}
