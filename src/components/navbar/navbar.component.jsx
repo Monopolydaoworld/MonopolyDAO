@@ -57,32 +57,30 @@ export default function NavBar() {
     );
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    console.log(isLoading);
-    if (isLoading) {
-      document.getElementById("input-btn").innerHTML = "Submitting...";
-    }
-    try {
-      const resopnse = await axios.post(emailUrl, { email }, config);
-      console.log(resopnse);
-      if (resopnse.status !== 201) {
-        setMessage(
-          "Oops! Something went wrong while submitting the form. Please try again later."
-        );
-        return;
-      }
-      setSuccessMessage("You’re all set! We’ll keep you updated.");
-      setIsLoading(false);
-    } catch (error) {
-      setMessage(
-        "Oops! Something went wrong while submitting the form. Please input the right email address!"
-      );
-      console.log(error);
-      setIsLoading(false);
-    }
-  };
+   const handleSubmit = async (e) => {
+     e.preventDefault();
+     setIsLoading(true);
+     console.log(isLoading);
+     if (isLoading) {
+       document.getElementById("input-btn").innerHTML = "Submitting...";
+     }
+     try {
+       const resopnse = await axios.post(emailUrl, { email }, config);
+       console.log(resopnse);
+       if (resopnse.status !== 201) {
+         setMessage(
+           "Oops! Something went wrong while submitting the form. Please input the right email address!"
+         );
+         return;
+       }
+       setSuccessMessage("You’re all set! We’ll keep you updated.");
+       setIsLoading(false);
+     } catch (error) {
+       setMessage("Email already in use");
+       console.log(error);
+       setIsLoading(false);
+     }
+   };
 
   const validate = (email) => {
     var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

@@ -85,8 +85,6 @@
   .section-header h1 {
     font-size: 50px;
   }
-  #fail-message {
-  }
   #success-message {
     width: fit-content;
   }
