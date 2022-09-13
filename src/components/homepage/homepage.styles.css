@@ -65,20 +65,16 @@
   width: 404px;
   margin: auto auto;
   margin-top: 4rem;
-  display: none;
 }
 
 #fail-message {
   color: #fd5f5f;
-  height: 25px;
   font-family: "Cabinet Grotesk", sans-serif;
   font-weight: 400;
-  width: auto;
-  width: 798px;
-  font-size: 20px;
-  margin: auto auto;
-  margin-top: 1rem;
-  display: none;
+  font-size: 25px;
+  line-height: 31px;
+  text-align: center;
+  transition: 0.3s;
 }
 
 @media screen and (max-width: 754px) {

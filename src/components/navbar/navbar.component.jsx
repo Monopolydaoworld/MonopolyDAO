@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/MDAOLogo4.png";
 import LogoDark from "../../assets/SecondaryLogo.png";
@@ -11,11 +11,17 @@ import "./navbar.styles.css";
 import Button from "../button/button.component";
 import Home1 from "../../assets/House1.png";
 import Home2 from "../../assets/House2.png";
-import LinkedinLogo from "../../assets/LinkedinLogo.png"
+import LinkedinLogo from "../../assets/LinkedinLogo.png";
+import axios from "axios";
 
 export default function NavBar() {
   // State to manage NavBar
   const [open, setOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [token, setToken] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [successsMessage, setSuccessMessage] = useState("");
   // Function to manage toggle
   const handleToggle = () => {
     setOpen(!open);
@@ -26,6 +32,88 @@ export default function NavBar() {
       }
     });
   };
+
+  const loginUrl = "http://localhost:8080/api/authenticate";
+  const emailUrl = "http://localhost:8080/api/email-registrations";
+  const username = "admin";
+  const password = "admin";
+  let config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
+    },
+  };
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    if (validate(e.target.value)) {
+      setEmail(e.target.value);
+      setMessage("");
+      return;
+    }
+    setEmail("");
+    setMessage(
+      "Oops! Something went wrong while submitting the form. Please input the right email address!"
+    );
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    console.log(isLoading);
+    if (isLoading) {
+      document.getElementById("input-btn").innerHTML = "Submitting...";
+    }
+    try {
+      const resopnse = await axios.post(emailUrl, { email }, config);
+      console.log(resopnse);
+      if (resopnse.status !== 201) {
+        setMessage(
+          "Oops! Something went wrong while submitting the form. Please try again later."
+        );
+        return;
+      }
+      setSuccessMessage("You’re all set! We’ll keep you updated.");
+      setIsLoading(false);
+    } catch (error) {
+      setMessage(
+        "Oops! Something went wrong while submitting the form. Please input the right email address!"
+      );
+      console.log(error);
+      setIsLoading(false);
+    }
+  };
+
+  const validate = (email) => {
+    var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
+  const Login = async () => {
+    const resopnse = await axios.post(
+      loginUrl,
+      JSON.stringify({
+        username,
+        password,
+      }),
+      config
+    );
+    const data = await resopnse.data;
+    if (data.status === 401) {
+      alert("Unauthorized client");
+      return;
+    }
+    setToken(data.id_token);
+    return;
+  };
+
+  useEffect(() => {
+    try {
+      Login();
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
   return (
     <div className="pages">
       {/* First Page */}
@@ -42,25 +130,31 @@ export default function NavBar() {
           )}
           <div className={`nav-links ${open ? "active" : ""}`}>
             <li id="nav-link">
-              <Link to="/about">About</Link>
+              <Link to="#">About</Link>
             </li>
             <li id="nav-link">
-              <Link to="/about">Team</Link>
+              <Link to="#">Team</Link>
             </li>
             <li id="nav-link">
-              <Link to="/about">Litepaper</Link>
+              <a
+                href="https://docs.google.com/document/d/1npXna7f3wiv9ievQnHJV5dkEplV3VYsOVFHVsTjaN40/edit"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Litepaper
+              </a>
             </li>
             <li id="nav-link">
               {open ? (
-                <Link to="/about">
+                <Link to="/#">
                   <Button body={"Enter App"} Line={Line2} id="active-btn" />
                 </Link>
               ) : (
-                <Link to="/about">Enter App</Link>
+                <Link to="/#">Enter App</Link>
               )}
             </li>
             <li id="nav-link">
-              <Link to="/about">
+              <Link to="#">
                 <img src={Line} alt="" />
               </Link>
             </li>
@@ -78,7 +172,7 @@ export default function NavBar() {
         <section>{open ? null : <Homepage />}</section>
       </div>
       {/* Second Page */}
-      <div className={`secondpage ${open ? "active" : null}`}>
+      <div className={`secondpage ${open ? "active" : null}`} id="about">
         <div className="secondpage-header">
           <h1>Own a Property in minutes.</h1>
         </div>
@@ -176,37 +270,46 @@ export default function NavBar() {
         </div>
       </div>
       {/* Sixth Page */}
-      <div className={`sixthpage ${open ? "active" : null}`}>
+      <div className={`sixthpage ${open ? "active" : null}`} id="team">
         <div className="sixthpage-header">
           <h1 id="fifthpage-header-h1">Our People</h1>
           <div className="sixthpage-content">
             <div className="sixthpage-content-1">
               <p className="sixthpage-content-p1">Temisan Agbajoh</p>
-              <p className="sixthpage-content-p2">Co-Founder</p>
-              <Link to="#">
+              <p className="sixthpage-content-p2">CEO / Co-Founder</p>
+              <a
+                href="https://www.linkedin.com/in/temisangerrard"
+                target="_black"
+              >
                 <img src={LinkedinLogo} alt="Linkedin" />
-              </Link>
+              </a>
             </div>
             <div className="sixthpage-content-1">
               <p className="sixthpage-content-p1">Efosa Osunhon</p>
-              <p className="sixthpage-content-p2">Co-Founder</p>
-              <Link to="#">
+              <p className="sixthpage-content-p2">COO / Co-Founder</p>
+              <a href="https://www.linkedin.com/in/efosa-john" target="_black">
                 <img src={LinkedinLogo} alt="Linkedin" id="linkedin" />
-              </Link>
+              </a>
             </div>
             <div className="sixthpage-content-1">
               <p className="sixthpage-content-p1">Naro Omo-Osagie</p>
               <p className="sixthpage-content-p2">Head of Legal/Compliance</p>
-              <Link to="#">
+              <a
+                href="https://www.linkedin.com/in/osasenaro-omo-osagie-b2a967131"
+                target="_black"
+              >
                 <img src={LinkedinLogo} alt="Linkedin" id="linkedin" />
-              </Link>
+              </a>
             </div>
             <div className="sixthpage-content-1">
               <p className="sixthpage-content-p1">Helen Ifeonye</p>
               <p className="sixthpage-content-p2">Design</p>
-              <Link to="#">
+              <a
+                href="https://www.linkedin.com/in/helen-ifeonye"
+                target="_black"
+              >
                 <img src={LinkedinLogo} alt="Linkedin" id="linkedin" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -220,21 +323,30 @@ export default function NavBar() {
           </h1>
           <section className="seventh-section">
             <div className="seventh-form-input" id="seventh-form-input">
-              <form action="#" method="post" id="seventh-form">
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  id="seventh-input-text"
-                  name="email"
-                  required
-                />
-                <Button
-                  body={"Join the Waitlist"}
-                  Line={Line2}
-                  seventh
-                  className="seventh-btn"
-                />
-              </form>
+              <div id="seventh-form">
+                {successsMessage.length > 0 ? (
+                  <p id="success-message">{successsMessage}</p>
+                ) : (
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      id="seventh-input-text"
+                      name="email"
+                      required
+                    />
+                    <Button
+                      body={"Join the Waitlist"}
+                      Line={Line2}
+                      seventh
+                      className="seventh-btn"
+                      isLoading={isLoading}
+                      onClick={handleSubmit}
+                      disabled={message.length > 0 && email.length < 1}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
           </section>
         </div>
