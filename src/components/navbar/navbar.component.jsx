@@ -33,8 +33,8 @@ export default function NavBar() {
     });
   };
 
-  const loginUrl = "http://localhost:8080/api/authenticate";
-  const emailUrl = "http://localhost:8080/api/email-registrations";
+  const loginUrl = "https://monopoly-dao.herokuapp.com/api/authenticate";
+  const emailUrl = "https://monopoly-dao.herokuapp.com/api/email-registrations";
   const username = "admin";
   const password = "admin";
   let config = {
