@@ -567,3 +567,9 @@ a {
     background-size: 900px 100vh;
   }
 }
+
+@media screen and (max-height: 500px) {
+  .firstpage {
+    background-size: 900px 150%
+  }
+}

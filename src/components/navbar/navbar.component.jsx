@@ -329,11 +329,10 @@ export default function NavBar() {
                 ) : (
                   <div>
                     <input
-                      type="email"
                       placeholder="Email Address"
                       id="seventh-input-text"
                       name="email"
-                      required
+                      onChange={(e) => handleChange(e)}
                     />
                     <Button
                       body={"Join the Waitlist"}

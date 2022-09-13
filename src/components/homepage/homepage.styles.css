@@ -64,7 +64,7 @@
   width: auto;
   width: 404px;
   margin: auto auto;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 #fail-message {
@@ -86,14 +86,13 @@
     font-size: 50px;
   }
   #fail-message {
-    width: fit-content;
   }
   #success-message {
     width: fit-content;
   }
   .first-section {
-  margin-top: 4rem;
-}
+    margin-top: 4rem;
+  }
 }
 
 @media screen and (max-width: 680px) {
@@ -129,5 +128,4 @@
   .form-input {
     margin-top: 1rem;
   }
-  
 }
