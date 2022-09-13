@@ -16,10 +16,39 @@
   margin-right: 20px;
   transition: 0.3;
 }
+#input-btnseventh {
+  background-color: #175366;
+  padding: 10px;
+  margin-left: 1rem;
+  border-radius: 12px;
+  width: auto;
+  height: 57px;
+  color: #fff;
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  margin-right: 20px;
+  transition: 0.3;
+}
+
 @media screen and (max-width: 754px) {
   #input-btn {
     margin-top: 1rem;
     width: 70vw;
+  }
+}
+@media screen and (max-width: 643px) {
+  #input-btnseventh {
+    margin-left: 0.5rem;
+  }
+}
+@media screen and (max-width: 624px) {
+  #input-btnseventh {
+    margin-left: 0;
   }
 }
 @media screen and (max-width: 320px) {

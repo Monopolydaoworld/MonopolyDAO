@@ -211,6 +211,46 @@ export default function NavBar() {
           </div>
         </div>
       </div>
+      {/* Sevent Page */}
+      <div className={`seventhpage ${open ? "active" : null}`}>
+        <div className="seventhpage-header">
+          <p id="seventhpage-header">FOLLOW OUR JOURNEY</p>
+          <h1 id="seventhpage-header-h1">
+            Sign up for our waitlist, get updates about our launch.
+          </h1>
+          <section className="seventh-section">
+            <div className="seventh-form-input" id="seventh-form-input">
+              <form action="#" method="post" id="seventh-form">
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  id="seventh-input-text"
+                  name="email"
+                  required
+                />
+                <Button
+                  body={"Join the Waitlist"}
+                  Line={Line2}
+                  seventh
+                  className="seventh-btn"
+                />
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div className={`footer ${open ? "active" : null}`}>
+        <img src={LogoDark} alt="logo" className="footer-logo_img" />
+        <Link to="#">
+          <li className="footer-link">About</li>
+        </Link>
+        <Link to="#">
+          <li className="footer-link">Team</li>
+        </Link>
+        <Link to="/">
+          <li className="footer-link">Litepaper</li>
+        </Link>
+      </div>
     </div>
   );
 }

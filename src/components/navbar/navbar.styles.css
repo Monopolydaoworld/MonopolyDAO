@@ -264,6 +264,70 @@ a {
   font-weight: 500;
 }
 
+/* Seventh Page */
+
+.seventhpage.active {
+  display: none;
+}
+
+.seventhpage {
+  background-color: #f3f5ff;
+  padding: 2rem 6rem;
+}
+#seventhpage-header {
+  color: #175366;
+  font-size: 20px;
+  font-weight: 500;
+}
+#seventhpage-header-h1 {
+  font-size: 4vw;
+  font-weight: 700;
+  max-width: 883px;
+  margin-top: 0;
+}
+#seventh-input-text {
+  justify-content: flex-start;
+  max-height: 57px;
+  width: 404px;
+  padding: 16px;
+  gap: 10px;
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 2rem;
+  margin-left: 0;
+  transition: 0.3s;
+}
+
+/* Footer */
+
+.footer {
+  padding: 2rem 6rem;
+}
+.footer.active {
+  display: none;
+}
+
+.footer-logo_img {
+  width: 3rem;
+  max-height: 7rem;
+  cursor: pointer;
+  margin: 2rem 0;
+}
+.footer-link {
+  margin: 1rem 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #1E1E1E !important;
+}
+
+@media only screen and (max-width: 883px) {
+  #seventh-input-text {
+    width: 290px;
+    margin-left: 0;
+  }
+}
+
 @media only screen and (max-width: 780px) {
   .navbar {
     padding: 1rem 3rem;
@@ -311,6 +375,17 @@ a {
   .sixthpage {
     padding: 2rem 2rem;
   }
+  /* Seventh Page */
+  .seventhpage {
+    padding: 2rem 2rem;
+  }
+  #seventh-input-text {
+    flex-direction: column;
+  }
+  /* Footer */
+  .footer {
+  padding: 2rem 2rem;
+}
 }
 
 @media only screen and (max-width: 680px) {
@@ -475,6 +550,16 @@ a {
   }
   .sixthpage-content-p2 {
     font-size: 3vw;
+  }
+
+  /* Seventh Page */
+  #seventh-input-text {
+    width: 80vw;
+  }
+}
+@media only screen and (max-width: 410px) {
+  #seventh-input-text {
+    width: 60vw;
   }
 }
 @media only screen and (max-height: 700px) {
