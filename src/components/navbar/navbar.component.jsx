@@ -13,6 +13,7 @@ import Home1 from "../../assets/House1.png";
 import Home2 from "../../assets/House2.png";
 import LinkedinLogo from "../../assets/LinkedinLogo.png";
 import axios from "axios";
+import { HashLink as Link2 } from "react-router-hash-link/dist/react-router-hash-link.cjs.production";
 
 export default function NavBar() {
   // State to manage NavBar
@@ -57,30 +58,30 @@ export default function NavBar() {
     );
   };
 
-   const handleSubmit = async (e) => {
-     e.preventDefault();
-     setIsLoading(true);
-     console.log(isLoading);
-     if (isLoading) {
-       document.getElementById("input-btn").innerHTML = "Submitting...";
-     }
-     try {
-       const resopnse = await axios.post(emailUrl, { email }, config);
-       console.log(resopnse);
-       if (resopnse.status !== 201) {
-         setMessage(
-           "Oops! Something went wrong while submitting the form. Please input the right email address!"
-         );
-         return;
-       }
-       setSuccessMessage("You’re all set! We’ll keep you updated.");
-       setIsLoading(false);
-     } catch (error) {
-       setMessage("Email already in use");
-       console.log(error);
-       setIsLoading(false);
-     }
-   };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    console.log(isLoading);
+    if (isLoading) {
+      document.getElementById("input-btn").innerHTML = "Submitting...";
+    }
+    try {
+      const resopnse = await axios.post(emailUrl, { email }, config);
+      console.log(resopnse);
+      if (resopnse.status !== 201) {
+        setMessage(
+          "Oops! Something went wrong while submitting the form. Please input the right email address!"
+        );
+        return;
+      }
+      setSuccessMessage("You’re all set! We’ll keep you updated.");
+      setIsLoading(false);
+    } catch (error) {
+      setMessage("Email already in use");
+      console.log(error);
+      setIsLoading(false);
+    }
+  };
 
   const validate = (email) => {
     var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -105,6 +106,10 @@ export default function NavBar() {
     return;
   };
 
+  const switchMobile = () => {
+    setOpen(false)
+  }
+
   useEffect(() => {
     try {
       Login();
@@ -115,7 +120,7 @@ export default function NavBar() {
   return (
     <div className="pages">
       {/* First Page */}
-      <div className={`firstpage ${open ? "active" : ""}`}>
+      <div className={`firstpage ${open ? "active" : ""}`} id="homepage">
         <div className="navbar">
           {open ? (
             <Link to="/">
@@ -128,10 +133,14 @@ export default function NavBar() {
           )}
           <div className={`nav-links ${open ? "active" : ""}`}>
             <li id="nav-link">
-              <Link to="#">About</Link>
+              <Link2 to="#about" smooth onClick={switchMobile}>
+                About
+              </Link2>
             </li>
             <li id="nav-link">
-              <Link to="#">Team</Link>
+              <Link2 to="#team" smooth onClick={switchMobile}>
+                Team
+              </Link2>
             </li>
             <li id="nav-link">
               <a
@@ -144,11 +153,18 @@ export default function NavBar() {
             </li>
             <li id="nav-link">
               {open ? (
-                <Link to="/#">
-                  <Button body={"Enter App"} Line={Line2} id="active-btn" />
-                </Link>
+                <Link2 to="#enterapp" smooth>
+                  <Button
+                    body={"Enter App"}
+                    Line={Line2}
+                    id="active-btn"
+                    onClick={switchMobile}
+                  />
+                </Link2>
               ) : (
-                <Link to="/#">Enter App</Link>
+                <Link2 to="#enterapp" smooth>
+                  Enter App
+                </Link2>
               )}
             </li>
             <li id="nav-link">
@@ -179,10 +195,10 @@ export default function NavBar() {
             MonopolyDAO is a decentralized home ownership platform that fully
             leverages on DeFi infrastructure and real world assets to provide
             accessible home ownership.
-            <a href="#" className="secondpage-a">
+            <Link2 to="#homepage" className="secondpage-a" smooth>
               Join the Community{" "}
               <img src={Line3} alt="" style={{ padding: "0 .5rem" }} />
-            </a>
+            </Link2>
           </p>
           <img src={Home1} alt="Home" className="secondpage-img" />
         </div>
@@ -211,10 +227,10 @@ export default function NavBar() {
                   with yield you can understand.
                 </span>
               </p>
-              <a href="#" className="secondpage-a">
-                About US{" "}
+              <Link2 to="#about" className="secondpage-a" smooth>
+                About US
                 <img src={Line3} alt="" style={{ padding: "0 .5rem" }} />
-              </a>
+              </Link2>
             </div>
           </div>
         </div>
@@ -249,7 +265,12 @@ export default function NavBar() {
               </p>
             </div>
           </div>
-          <a href="#" className="secondpage-a">
+          <a
+            href="https://docs.google.com/document/d/1npXna7f3wiv9ievQnHJV5dkEplV3VYsOVFHVsTjaN40/edit"
+            target="_blank"
+            rel="noreferrer"
+            className="secondpage-a"
+          >
             Read More
             <img src={Line3} alt="" style={{ padding: "0 .5rem" }} />
           </a>
@@ -313,7 +334,7 @@ export default function NavBar() {
         </div>
       </div>
       {/* Sevent Page */}
-      <div className={`seventhpage ${open ? "active" : null}`}>
+      <div className={`seventhpage ${open ? "active" : null}`} id="enterapp">
         <div className="seventhpage-header">
           <p id="seventhpage-header">FOLLOW OUR JOURNEY</p>
           <h1 id="seventhpage-header-h1">
@@ -349,16 +370,22 @@ export default function NavBar() {
         </div>
       </div>
       <div className={`footer ${open ? "active" : null}`}>
-        <img src={LogoDark} alt="logo" className="footer-logo_img" />
-        <Link to="#">
+        <Link2 to="#homepage" smooth>
+          <img src={LogoDark} alt="logo" className="footer-logo_img" />
+        </Link2>
+        <Link2 to="#about" smooth>
           <li className="footer-link">About</li>
-        </Link>
-        <Link to="#">
+        </Link2>
+        <Link2 to="#team" smooth>
           <li className="footer-link">Team</li>
-        </Link>
-        <Link to="/">
+        </Link2>
+        <a
+          href="https://docs.google.com/document/d/1npXna7f3wiv9ievQnHJV5dkEplV3VYsOVFHVsTjaN40/edit"
+          target="_blank"
+          rel="noreferrer"
+        >
           <li className="footer-link">Litepaper</li>
-        </Link>
+        </a>
       </div>
     </div>
   );
