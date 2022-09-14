@@ -15,6 +15,7 @@ import LinkedinLogo from "../../assets/LinkedinLogo.png";
 import axios from "axios";
 import { HashLink as Link2 } from "react-router-hash-link/dist/react-router-hash-link.cjs.production";
 
+
 export default function NavBar() {
   // State to manage NavBar
   const [open, setOpen] = useState(false);
