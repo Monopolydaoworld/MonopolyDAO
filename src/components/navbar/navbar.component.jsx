@@ -15,7 +15,6 @@ import LinkedinLogo from "../../assets/LinkedinLogo.png";
 import axios from "axios";
 import { HashLink as Link2 } from "react-router-hash-link/dist/react-router-hash-link.cjs.production";
 
-
 export default function NavBar() {
   // State to manage NavBar
   const [open, setOpen] = useState(false);
@@ -105,8 +104,8 @@ export default function NavBar() {
   };
 
   const switchMobile = () => {
-    setOpen(false)
-  }
+    setOpen(false);
+  };
 
   useEffect(() => {
     try {
@@ -292,7 +291,7 @@ export default function NavBar() {
           <h1 id="fifthpage-header-h1">Our People</h1>
           <div className="sixthpage-content">
             <div className="sixthpage-content-1">
-              <p className="sixthpage-content-p1">Temisan Agbajoh</p>
+              <p className="sixthpage-content-p1">Temisan Gerrard</p>
               <p className="sixthpage-content-p2">CEO / Co-Founder</p>
               <a
                 href="https://www.linkedin.com/in/temisangerrard"
@@ -302,7 +301,7 @@ export default function NavBar() {
               </a>
             </div>
             <div className="sixthpage-content-1">
-              <p className="sixthpage-content-p1">Efosa Osunhon</p>
+              <p className="sixthpage-content-p1">Efosa John</p>
               <p className="sixthpage-content-p2">COO / Co-Founder</p>
               <a href="https://www.linkedin.com/in/efosa-john" target="_black">
                 <img src={LinkedinLogo} alt="Linkedin" id="linkedin" />
@@ -310,7 +309,7 @@ export default function NavBar() {
             </div>
             <div className="sixthpage-content-1">
               <p className="sixthpage-content-p1">Naro Omo-Osagie</p>
-              <p className="sixthpage-content-p2">Head of Legal/Compliance</p>
+              <p className="sixthpage-content-p2">Head of Legal / Compliance</p>
               <a
                 href="https://www.linkedin.com/in/osasenaro-omo-osagie-b2a967131"
                 target="_black"
@@ -319,10 +318,10 @@ export default function NavBar() {
               </a>
             </div>
             <div className="sixthpage-content-1">
-              <p className="sixthpage-content-p1">Helen Ifeonye</p>
-              <p className="sixthpage-content-p2">Design</p>
+              <p className="sixthpage-content-p1">Justin Irabor</p>
+              <p className="sixthpage-content-p2">CTO</p>
               <a
-                href="https://www.linkedin.com/in/helen-ifeonye"
+                href="https://www.linkedin.com/in/justinirabor"
                 target="_black"
               >
                 <img src={LinkedinLogo} alt="Linkedin" id="linkedin" />
