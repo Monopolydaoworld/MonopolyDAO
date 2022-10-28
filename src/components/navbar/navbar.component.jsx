@@ -274,7 +274,7 @@ export default function NavBar() {
         </div>
       </div>
       {/* Fifth page */}
-      <div className={`fifthpage ${open ? "active" : null}`}>
+      {/* <div className={`fifthpage ${open ? "active" : null}`}>
         <div className="fifthpage-header">
           <h1 id="fifthpage-header-h1">$MDAO Token</h1>
           <p className="fifthpage-content-p2">
@@ -284,7 +284,7 @@ export default function NavBar() {
             from the DAO’s profitable activities.
           </p>
         </div>
-      </div>
+      </div> */}
       {/* Sixth Page */}
       <div className={`sixthpage ${open ? "active" : null}`} id="team">
         <div className="sixthpage-header">
