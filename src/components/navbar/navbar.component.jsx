@@ -242,9 +242,7 @@ export default function NavBar() {
               <p className="forthpage-content-p1">Accessibility</p>
               <p className="fourthpage-content-p2">
                 Fractionalizing real estate opens up the asset class to more
-                participants globally. We handle the heavy cost of initial
-                purchase and legal fees, you only need to connect your wallet to
-                make a purchase
+                participants globally.
               </p>
             </div>
             <div className="fourthpage-content-1" id="borders">
@@ -292,7 +290,7 @@ export default function NavBar() {
           <div className="sixthpage-content">
             <div className="sixthpage-content-1">
               <p className="sixthpage-content-p1">Temisan Gerrard</p>
-              <p className="sixthpage-content-p2">CEO / Co-Founder</p>
+              <p className="sixthpage-content-p2">CEO</p>
               <a
                 href="https://www.linkedin.com/in/temisangerrard"
                 target="_black"
@@ -302,7 +300,7 @@ export default function NavBar() {
             </div>
             <div className="sixthpage-content-1">
               <p className="sixthpage-content-p1">Efosa John</p>
-              <p className="sixthpage-content-p2">COO / Co-Founder</p>
+              <p className="sixthpage-content-p2">COO</p>
               <a href="https://www.linkedin.com/in/efosa-john" target="_black">
                 <img src={LinkedinLogo} alt="Linkedin" id="linkedin" />
               </a>
